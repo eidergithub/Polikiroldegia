@@ -30,33 +30,42 @@
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Fecha Inicio</div>
-			<div class="col text-center font-weight-bold">20/03/2020</div>
+			<div class="col text-center font-weight-bold"><%=actividad.getFecha_inicio() %></div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Dias Semana</div>
-			<div class="col text-center font-weight-bold">Lunes, Miercoles</div>
+			<div class="col text-center font-weight-bold"><%=actividad.getDias() %></div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Horas</div>
-			<div class="col text-center font-weight-bold">16</div>
+			<div class="col text-center font-weight-bold"><%=actividad.getHoras() %></div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Max Participantes</div>
-			<div class="col text-center font-weight-bold">30</div>
+			<div class="col text-center font-weight-bold"><%=actividad.getMaxParticipantes() %></div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Precio</div>
-			<div class="col text-center font-weight-bold">45 Eur</div>
+			<div class="col text-center font-weight-bold"><%=actividad.getPrecio() %> Eur</div>
 		</div>
 		<br>
 		<br>
 		<div class="row">
-			<div class="col text-center font-weight-bold"><button type="button" class="btn btn-primary">Editar</button></div>
-			<div class="col text-center font-weight-bold"><button type="button" class="btn btn-danger">Borrar</button></div>
+			<div class="col text-center font-weight-bold">
+				<a class="btn btn-primary" href="ModificarActividad?id=<%=actividad.getId()%>">Modificar</a>
+			</div>
+			<div class="col text-center font-weight-bold">
+				<a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">Eliminar</a>
+			</div>
+		</div>
+		<div class="row mt-e">
+			<div class="col">
+				<a href="VerActividades">Ver actividades</a>
+			</div>
 		</div>
 		<br>
 	</div>

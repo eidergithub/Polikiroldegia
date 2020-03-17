@@ -1,11 +1,16 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import modelo.bean.Actividad;
+import modelo.dao.ModeloActividad;
 
 /**
  * Servlet implementation class VerActividades
@@ -26,8 +31,12 @@ public class VerActividades extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		ModeloActividad mActividad = new ModeloActividad();
+		ArrayList<Actividad> actividades = mActividad.selectAll();
+		
+		request.setAttribute("actividades", actividades);
+		
+		request.getRequestDispatcher("verActividades.jsp").forward(request, response);
 	}
 
 	/**

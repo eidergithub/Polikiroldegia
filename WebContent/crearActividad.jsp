@@ -23,27 +23,27 @@
 	<form action="InsertarActividad" method="POST">
 		<div class="form-group">
 			<label for="nombre">Nombre actividad</label> 
-			<input type="email" class="form-control" id="nombre" name="nombre"> 
+			<input type="text" class="form-control" id="nombre" name="nombre"> 
 		</div>
 		<div class="form-group">
 			<label for="fecha_inicio">Fecha inico</label> 
-			<input type="email" class="form-control" id="fecha_inicio" name="fecha_inicio"> 
+			<input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio"> 
 		</div>
 		<div class="form-group">
 			<label for="dias_semana">Dias semana</label> 
-			<input type="email" class="form-control" id="dias_semana" name="dias_semana"> 
+			<input type="text" class="form-control" id="dias_semana" name="dias_semana"> 
 		</div>
 		<div class="form-group">
 			<label for="horas">Duracion (horas)</label> 
-			<input type="email" class="form-control" id="horas" name="horas"> 
+			<input type="text" class="form-control" id="horas" name="horas"> 
 		</div>
 		<div class="form-group">
-			<label for="max_participantes">Máximo numero de participantes</label> 
-			<input type="email" class="form-control" id="max_participantes" name="max_participantes"> 
+			<label for="max_participantes">Maximo numero de participantes</label> 
+			<input type="text" class="form-control" id="max_participantes" name="max_participantes"> 
 		</div>
 		<div class="form-group">
 			<label for="precio">Precio</label> 
-			<input type="email" class="form-control" id="precio" name="precio"> 
+			<input type="text" class="form-control" id="precio" name="precio"> 
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>

@@ -36,9 +36,7 @@ public class VerActividad extends HttpServlet {
 		Actividad actividad = mActividad.get(idActividad);
 		
 		request.setAttribute("actividad", actividad);
-		request.getRequestDispatcher("VerActividad.jsp").forward(request, response);
-		
-		
+		request.getRequestDispatcher("verActividad.jsp").forward(request, response);
 		
 	}
 
