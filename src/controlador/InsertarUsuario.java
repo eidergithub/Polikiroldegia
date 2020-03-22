@@ -55,7 +55,7 @@ public class InsertarUsuario extends HttpServlet {
 		mUsuario.insert(usuario);
 		
 		//usuario guztiak bistaratu
-		response.sendRedirect("verUsuarios");
+		response.sendRedirect("VerUsuarios");
 	}
 
 }

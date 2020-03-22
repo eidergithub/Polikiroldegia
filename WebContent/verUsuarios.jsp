@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+ <%@ page import="java.util.ArrayList" %>
+ <%@ page import="modelo.bean.Usuario" %>
+<%
+	ArrayList<Usuario> usuarios = (ArrayList<Usuario>)request.getAttribute("usuarios");
+%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,28 +15,41 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Usuarios</title>
   </head>
   <body>
-  	<div class="container">
-  		<h1>Formulario para crear usuario</h1>
-		<form action="InsertarUsuario" method="POST">
-			<div class="form-group">
-				<label for="nombre">Nombre y apellido</label>
-				<input type="text" class="form-control" id="nombre" name="nombre">
-			</div>
-			<div class="form-group">
-				<label for="dni">Dni</label>
-				<input type="text" class="form-control" id="dni" name="dni">
-			</div>
-			<div class="form-group">
-				<label for="codigo">Codigo</label>
-				<input type="text" class="form-control" id="codigo" name="codigo">
-			</div>
-			<buttom type="submit" class="btn btn-primary">Submit</buttom>
-		</form>
-  	</div>
-    
+    <div class="container mt-3">
+    	<div class="row">
+    		<a class="btn btn-primary" href="CrearUsuario">Crear usuario</a>
+    	</div>
+    		<h1>Usuarios</h1>
+	
+		<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th scope="col">nombre apellido</th>
+	      <th scope="col">dni</th>
+	      <th scope="col">codigo</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  
+	  <%for(int i = 0; i< usuarios.size(); i++){ 
+	  		Usuario usuario = usuarios.get(i);
+	  %>
+	  
+	    <tr>
+	      <th><%=usuario.getNombreApellido()%></a></th>
+	      <td><%=usuario.getDni()%></td>
+	      <td><%=usuario.getCodigo()%></td>
+	    </tr>
+	   
+	   <%} %>
+	   
+	  </tbody>
+	</table>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
