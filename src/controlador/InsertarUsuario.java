@@ -38,7 +38,7 @@ public class InsertarUsuario extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//datuak jaso
-		String nombreApellido = request.getParameter("nombre_apellido");
+		String nombreApellido = request.getParameter("nombre_apellido"); //jsp-an jarri dudan izena
 		String dni = request.getParameter("dni");
 		String codigo = request.getParameter("codigo");
 		

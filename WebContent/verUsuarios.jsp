@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
- <%@ page import="java.util.ArrayList" %>
- <%@ page import="modelo.bean.Usuario" %>
-<%
-	ArrayList<Usuario> usuarios = (ArrayList<Usuario>)request.getAttribute("usuarios");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,17 +30,14 @@
 	  </thead>
 	  <tbody>
 	  
-	  <%for(int i = 0; i< usuarios.size(); i++){ 
-	  		Usuario usuario = usuarios.get(i);
-	  %>
+	  <c:forEach items="${usuarios}" var="usuario">
 	  
 	    <tr>
-	      <th><%=usuario.getNombreApellido()%></a></th>
-	      <td><%=usuario.getDni()%></td>
-	      <td><%=usuario.getCodigo()%></td>
+	      <th>${usuario.getNombreApellido()}</a></th>
+	      <td>${usuario.getDni()}</td>
+	      <td>${usuario.getCodigo()}</td>
 	    </tr>
-	   
-	   <%} %>
+	   </c:forEach>
 	   
 	  </tbody>
 	</table>
