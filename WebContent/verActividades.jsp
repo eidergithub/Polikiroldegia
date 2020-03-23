@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
- <%@ page import="java.util.ArrayList" %>
-<%@ page import="modelo.bean.Actividad" %>
-<%
-	ArrayList<Actividad> actividades = (ArrayList<Actividad>)request.getAttribute("actividades");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,10 +32,7 @@
 	  </thead>
 	  <tbody>
 	  
-	  <%for(int i = 0; i< actividades.size(); i++){ 
-	  		Actividad actividad = actividades.get(i);
-	  %>
-	  
+	  <c:forEach items="${actividades}" var="actividad">
 	    <tr>
 	      <th><a href="VerActividad?id=${actividad.getId()}">${actividad.getNombre()}</a></th>
 	      <td>${actividad.getFecha_inicio()}</td>
@@ -51,8 +44,7 @@
 	      
 	      </td>
 	    </tr>
-	   
-	   <%} %>
+	   </c:forEach>
 	   
 	  </tbody>
 	</table>
