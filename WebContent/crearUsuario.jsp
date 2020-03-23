@@ -17,8 +17,8 @@
   		<h1>Formulario para crear usuario</h1>
 		<form action="InsertarUsuario" method="POST">
 			<div class="form-group">
-				<label for="nombre">Nombre y apellido</label>
-				<input type="text" class="form-control" id="nombre" name="nombre">
+				<label for="nombre_apellido">Nombre y apellido</label>
+				<input type="text" class="form-control" id="nombre_apellido" name="nombre_apellido">
 			</div>
 			<div class="form-group">
 				<label for="dni">Dni</label>
