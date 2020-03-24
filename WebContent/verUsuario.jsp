@@ -35,6 +35,11 @@
 			<div class="col text-center font-weight-bold">Codigo</div>
 			<div class="col text-center font-weight-bold">${usuario.codigo}</div>
 		</div>
+		<div class="row">
+			<div class="col text-center font-weight-bold">
+				<a class="btn btn-primary" href="EditarUsuario?id=${usuario.id}">Editar</a>
+			</div>
+		</div>
 		<div class="row mt-e">
 			<div class="col">
 				<a href="VerUsuarios">Ver usuarios</a>
