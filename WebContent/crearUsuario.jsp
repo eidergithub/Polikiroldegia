@@ -15,6 +15,7 @@
   <body>
   	<div class="container">
   		<h1>Formulario para crear usuario</h1>
+  		
 		<form action="InsertarUsuario" method="POST">
 			<div class="form-group">
 				<label for="nombre_apellido">Nombre y apellido</label>
@@ -28,7 +29,7 @@
 				<label for="codigo">Codigo</label>
 				<input type="text" class="form-control" id="codigo" name="codigo">
 			</div>
-			<buttom type="submit" class="btn btn-primary">Submit</buttom>
+			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
   	</div>
     

@@ -42,6 +42,10 @@ public class InsertarUsuario extends HttpServlet {
 		String dni = request.getParameter("dni");
 		String codigo = request.getParameter("codigo");
 		
+//		System.out.println(nombreApellido);
+//		System.out.println(dni);
+//		System.out.println(codigo);
+		
 		//usuario baten gorde
 		Usuario usuario = new Usuario();
 		
