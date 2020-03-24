@@ -11,37 +11,35 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Usuarios</title>
+    <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container mt-3">
-    	<div class="row">
-    		<a class="btn btn-primary" href="CrearUsuario">Crear usuario</a>
-    	</div>
-    		<h1>Usuarios</h1>
-	
-		<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th scope="col">nombre apellido</th>
-	      <th scope="col">dni</th>
-	      <th scope="col">codigo</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	  
-	  <c:forEach items="${usuarios}" var="usuario">
-	  
-	    <tr>
-	      <th><a href="VerUsuario?id=${actividad.getId()}">${usuario.getNombreApellido()}</a></th>
-	      <td>${usuario.getDni()}</td>
-	      <td>${usuario.getCodigo()}</td>
-	    </tr>
-	   </c:forEach>
-	   
-	  </tbody>
-	</table>
-    </div>
+    <div class="container mt-5 rounded border border-dark">
+		<div class="row">
+			<div class="col">
+				<h1 class="text-center">${usuario.getNombreApellido()}</h1>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col text-center font-weight-bold">Nombre Apellido</div>
+			<div class="col text-center font-weight-bold">${usuario.getNombreApellido()}</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col text-center font-weight-bold">DNI</div>
+			<div class="col text-center font-weight-bold">${usuario.getDni()}</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col text-center font-weight-bold">Codigo</div>
+			<div class="col text-center font-weight-bold">${usuario.codigo}</div>
+		</div>
+		<div class="row mt-e">
+			<div class="col">
+				<a href="VerUsuarios">Ver usuarios</a>
+			</div>
+		</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
