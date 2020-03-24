@@ -17,7 +17,7 @@
     <div class="container mt-3">
 		<h1>Formulario para editar usuario</h1>
 
-
+		<form action="ModificarUsuario" method="POST">
 			<input type="hidden" name="id" value="${usuario.getId()}">
 			
 			<div class="form-group">

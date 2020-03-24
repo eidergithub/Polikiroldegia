@@ -33,7 +33,7 @@
 	  <c:forEach items="${usuarios}" var="usuario">
 	  
 	    <tr>
-	      <th><a href="VerUsuario?id=${actividad.getId()}">${usuario.getNombreApellido()}</a></th>
+	      <th><a href="VerUsuario?id=${usuario.getId()}">${usuario.getNombreApellido()}</a></th>
 	      <td>${usuario.getDni()}</td>
 	      <td>${usuario.getCodigo()}</td>
 	    </tr>
