@@ -19,6 +19,14 @@
   	<div class="row">
   		<a class="btn btn-primary" href="CrearActividad">Crear actividad</a>
   	</div>
+  	<div class="row">
+  		<div class="col-4 offset-8">
+  			<form action="BuscarActividades" method="POST" class="form-inline">
+  				<input type="text" name="query" class="form-control" placeholder="buscar actividades">
+  				<button type="submit" class="btn btn-primary mx-2">Buscar</button>
+  			</form>
+  		</div>
+  	</div>
 	  <h1>Actividades</h1>
 	
 		<table class="table table-striped">
