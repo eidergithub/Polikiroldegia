@@ -18,6 +18,14 @@
     	<div class="row">
     		<a class="btn btn-primary" href="CrearUsuario">Crear usuario</a>
     	</div>
+    	<div class="row">
+    		<div class="col-4 offset-8">
+    			<form action="BuscarUsuarios" method="POST" class="form-inline">
+    				<input type="text" name="query" class="form-control" placeholder="buscar usuarios">
+    				<button type="submit" class="btn btn-primary mx-2">Buscar</button>    				
+    			</form>
+    		</div>
+    	</div>
     		<h1>Usuarios</h1>
 	
 		<table class="table table-striped">
