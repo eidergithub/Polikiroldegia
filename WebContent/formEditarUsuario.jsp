@@ -22,7 +22,7 @@
 			
 			<div class="form-group">
 				<label for="nombreApellido">Nombre Apellido</label>
-				<input type="text" disabled class="form-control" id="nombreApellido" name="nombreApellido" value="${usuario.getNombreApellido()}">
+				<input type="text" class="form-control" id="nombreApellido" name="nombreApellido" value="${usuario.getNombreApellido()}">
 			</div>
 
 			<div class="form-group">
