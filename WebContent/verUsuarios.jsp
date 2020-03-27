@@ -16,7 +16,12 @@
   <body>
     <div class="container mt-3">
     	<div class="row">
-    		<a class="btn btn-primary" href="CrearUsuario">Crear usuario</a>
+    		<div class="col-2">
+    			<a class="btn btn-info" href="Home">Volver a inicio</a>
+    		</div>
+    		<div class="col-2">
+    			<a class="btn btn-primary" href="CrearUsuario">Crear usuario</a>
+    		</div>
     	</div>
     	<div class="row">
     		<div class="col-4 offset-8">
