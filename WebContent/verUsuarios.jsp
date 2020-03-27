@@ -26,6 +26,7 @@
 	      <th scope="col">nombre apellido</th>
 	      <th scope="col">dni</th>
 	      <th scope="col">codigo</th>
+	      <th scope="col">acciones</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -36,6 +37,11 @@
 	      <th><a href="VerUsuario?id=${usuario.getId()}">${usuario.getNombreApellido()}</a></th>
 	      <td>${usuario.getDni()}</td>
 	      <td>${usuario.getCodigo()}</td>
+	      <td>
+	      	<a class="btn btn-primary" href="VerUsuario?id=${usuario.getId()}">Ver</a>
+	      	<a class="btn btn-secondary" href="EditarUsuario?id=${usuario.getId()}">Editar</a>
+	      	<a class="btn btn-danger" href="EliminarUsuario?id=${usuario.getId()}">Eliminar</a>
+	      </td>
 	    </tr>
 	   </c:forEach>
 	   
