@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import modelo.bean.Actividad;
@@ -48,35 +49,38 @@ public class ApiCreateActividad extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String jsonActividad = request.getParameter("actividad");
 		
-		System.out.println(jsonActividad);
 		JSONObject jsonObject = new JSONObject(jsonActividad);
 		
 		Actividad actividad = new Actividad();
 		actividad.setNombre(jsonObject.getString("nombre"));
 			//data...
 		Date fechaInicio = null;
-		
-		String fechaInicioParametro = jsonObject.getString("fechaInicio");
 		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+		
 		try {
-			fechaInicio = formato.parse(request.getParameter("fechaInicio"));
-		} catch (ParseException e) {
+			fechaInicio=formato.parse(jsonObject.getString("fechaInicio"));
+		} catch (JSONException | ParseException e1) {
+			e1.printStackTrace();
+		}
+		
+		actividad.setFecha_inicio(fechaInicio);
+		actividad.setDias(jsonObject.getString("dias"));
+		actividad.setHoras(jsonObject.getInt("horas"));
+		actividad.setMaxParticipantes(jsonObject.getInt("maxParticipantes"));
+		actividad.setPrecio(jsonObject.getDouble("precio"));
+		
+		ModeloActividad mActividad =  new ModeloActividad();
+		mActividad.insert(actividad);
+		
+		try {
+			mActividad.getConexion().close();
+		} catch (SQLException e) {
+			System.out.println("Errorea conexioa ixtean");
 			e.printStackTrace();
 		}
 		
-		actividad.setDias(jsonObject.getString("dias"));
-		actividad.setHoras(jsonObject.getInt("horasSemana"));
-		actividad.setHoras(jsonObject.getInt("maxParticipantes"));
-		actividad.setPrecio(jsonObject.getDouble("precio"));
-		
-//		System.out.println(actividad.getNombre());
-//		System.out.println(actividad.getFecha_inicio());
-//		System.out.println(actividad.getDias());
-//		System.out.println(actividad.getHoras());
-//		System.out.println(actividad.getMaxParticipantes());
-//		System.out.println(actividad.getPrecio());
-		
-		
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setCharacterEncoding("UTF-8");
 	}
 
 }
