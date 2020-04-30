@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
-import modelo.bean.Usuario;
+import modelo.bean.MiUsuario;
 import modelo.dao.ModeloUsuario;
 
 /**
@@ -48,13 +48,32 @@ public class ApiCreateUsuario extends HttpServlet {
 		System.out.println(jsonUsuario);
 		JSONObject jsonObject = new JSONObject(jsonUsuario);
 		
-		Usuario usuario = new Usuario();
+		MiUsuario usuario = new MiUsuario();
 		usuario.setNombreApellido(jsonObject.getString("nombreApellido"));
 		usuario.setCodigo(jsonObject.getString("codigo"));
 		usuario.setDni(jsonObject.getString("dni"));
 		
 		ModeloUsuario mUsuario = new ModeloUsuario();
-		mUsuario.insert(usuario);
+		//validar
+		if (usuario.validar()) { 
+			//datuen luzeera ondo badago
+			if (mUsuario.existDni(usuario.getDni()) || mUsuario.existCodigo(usuario.getCodigo())) { 
+				//kodea eta NANa existitzen badira error
+				response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Validar: Kodea edo NANa errepikatu da");
+			} else { 
+				//ez badira existitzen usuarioa gehitu
+				mUsuario.insert(usuario);
+				
+				try {
+					mUsuario.getConexion().close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		} else {
+			//datuak txarto sartu dira
+			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Validar: Datuak txarto sartu dira");
+		}
 			
 		try {
 			mUsuario.getConexion().close();
