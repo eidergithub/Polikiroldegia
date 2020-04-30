@@ -67,6 +67,7 @@ public class ApiCreateUsuario extends HttpServlet {
 				try {
 					mUsuario.getConexion().close();
 				} catch (SQLException e) {
+					System.out.println("Errorea conexioa ixtean");
 					e.printStackTrace();
 				}
 			}
